@@ -13,7 +13,7 @@
 library(vegan);library(ggplot2);library(reshape2);library(dplyr); library(qvalue); library(psych); library(RColorBrewer)
 library(gplots); library(ggrepel)
 
-setwd("R:/ID/ID1/Collins/MBAA/MBAA_Suite_2017")
+setwd("...")
 param_settings=read.table(file="MBAA_Suite_param.txt",header=F,sep='=',stringsAsFactors=F)
 
 #---------------------------------------------------------------------------------#
@@ -103,7 +103,7 @@ if(param_settings[which(param_settings[,1]=="create_RelAbunTable"),2]=="T"){
 setwd(param_settings[which(param_settings[,1]=="outdir"),2])
 level = param_settings[which(param_settings[,1]=="taxon_level"),2]
 pri_grp = param_settings[which(param_settings[,1]=="pri_grp"),2]
-color_match = as.matrix(read.csv(paste("R:/ID/ID1/Collins/MBAA/Color/all.csv",sep="")))
+color_match = as.matrix(read.csv(paste("color.csv",sep="")))
 color_match[,1] = paste0(color_match[,3], color_match[,1])
 
 metadata = read.table(file=param_settings[which(param_settings[,1]=="samplelist"),2],header=T,stringsAsFactors=F,sep='\t',row.names = 1)
@@ -231,41 +231,3 @@ par(mar=c(1, 1, 1, 1) + 0.1)
 heatmap.2(tmp_abun,trace="none",density.info="none",ColSideColors=mypalette[unclass(factor(relative_abun[,pri_grp]))],margin=c(5,12))
 legend("left",as.character(sort(unique(relative_abun[,pri_grp]))),fill=mypalette,title="Groups",box.col="white")
 dev.off()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
