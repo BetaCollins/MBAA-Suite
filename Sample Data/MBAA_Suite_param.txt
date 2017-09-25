@@ -1,0 +1,9 @@
+create_RelAbunTable=T
+files_dir=R:/MBAA_Suite_2017/rawtables
+outdir=R:/MBAA_Suite_2017/plot
+samplelist=R:/MBAA_Suite_2017/annotation.txt
+taxon_level=genus
+pri_grp=group
+sec_grp=NULL
+tp_seq=NULL
+
